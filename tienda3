@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Tienda</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+<header id="header" style="background-color:rgb(252, 227, 0) ;">
+  <div class="container mt-2">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="logo-izq"> <img src="img/logo.png" alt="logo" width="250" height="136"> </div>
+      </div>
+      <div class="col-md-2">
+        <div class="info-der ">
+          <button type="button" class="btn btn-dark mt-3 btn-sm" data-toggle="Iniciar sesión" title="Iniciar sesión">Iniciar sesión</button>
+          <br>
+          <button type="button" class="btn btn-dark mt-3 btn-sm" data-toggle="Regístrate" title="Regístrate">Registrarse</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href="#">Filtrar</a>
+  <div class="dropdown">
+    <button class="btn btn-warning dropdown-toggle" type="button" id="ciudad" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Ciudad </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <button class="dropdown-item" type="button">Ciudad 1</button>
+      <button class="dropdown-item" type="button">Ciudad 2</button>
+      <button class="dropdown-item" type="button">Ciudad 3</button>
+      <button class="dropdown-item" type="button">Ciudad 4</button>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="btn btn-warning dropdown-toggle" type="button" id="RangoPrecio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Precio </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <button class="dropdown-item" type="button">Menor a Mayor</button>
+      <button class="dropdown-item" type="button">Mayor a Menor</button>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="btn btn-warning dropdown-toggle" type="button" id="categorías" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Categorías </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li class="dropdown dropdown-submenu"> <a className="dropdown-toggle" href="/" id="categoría1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Categoría 1 </a>
+        <div className="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" id="cat1.1"href="#">Subcategoría 1</a> <a class="dropdown-item" id="cat1.2" href="#">Subcategoría 2</a> <a class="dropdown-item" id="cat1.3" href="#">Subcategoría 3</a> </div>
+      </li>
+      <li class="dropdown dropdown-submenu"> <a className="dropdown-toggle" href="/" id="categoría2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Categoría 2 </a>
+        <div className="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item"id="cat2.1"href="#">Subcategoría 1</a> <a class="dropdown-item" id="cat2.2"href="#">Subcategoría 2</a> </div>
+      </li>
+      <li class="dropdown dropdown-submenu"> <a className="dropdown-toggle" href="/" id="categoría3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Categoría 3 </a>
+        <div className="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item"id="cat3.1"href="#">Subcategoría 1</a> <a class="dropdown-item" id="cat3.2"href="#">Subcategoría 2</a> </div>
+      </li>
+      <li class="dropdown dropdown-submenu"> <a className="dropdown-toggle" href="/" id="categoría 4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Categoría 4 </a>
+        <div className="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item"id="cat4.1"href="#">Subcategoría 1</a> </div>
+      </li>
+    </div>
+  </div>
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" data-toggle="Buscar" title="Buscar">Buscar</button>
+  </form>
+</nav>
+<div class="container">
+  <div class="row">
+    <!-- Elementos generados a partir del JSON -->
+    <main id="items" class="col-sm-8 row"> </main>
+    <!-- Carrito -->
+    <aside class="col-sm-4">
+      <center>
+        <i class="fa fa-shopping-cart fa-5x" style="color:#fbd300;" ></i>
+      </center>
+      <!-- Elementos del carrito -->
+      <ul id="carrito" class="list-group">
+      </ul>
+      <hr>
+      <!-- Precio total -->
+      <p class="text-right">Total:&dollar; <span id="total"></span></p>
+      <button id="boton-vaciar" class="btn btn-warning">Vaciar</button>
+      <button id="boton-pagar" class="btn btn-warning">Pagar</button>
+    </aside>
+  </div>
+</div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src='js/script.js'></script>
+</body>
+</html>
